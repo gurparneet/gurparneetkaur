@@ -8,7 +8,7 @@ export const profile = {
     "https://www.linkedin.com/in/gurparneet-kaur-jattana-284122179",
   linkedinLabel: "linkedin.com/in/gurparneet-kaur-jattana-284122179",
   resumeUrl: "/resume/Gurparneet-Kaur-Resume.pdf",
-  photoUrl: "/images/gurparneet-kaur.jpg",
+  photoUrl: "/__l5e/assets-v1/84994ad2-5db5-4c02-a3f1-db40f07056e0/gurparneet.jpg",
   status: "Open to New Opportunities",
   headline:
     "Software Developer Building, Supporting & Improving Enterprise Applications",
