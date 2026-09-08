@@ -2,7 +2,7 @@ export const profile = {
   name: "Gurparneet Kaur",
   title: "Software Developer | Application Support Developer | Technical Problem Solver",
   shortTitle: "Software Developer / Application Support Developer",
-  location: "Cambridge, Ontario, Canada",
+  location: "Canada",
   email: "gurparneet03@gmail.com",
   linkedin:
     "https://www.linkedin.com/in/gurparneet-kaur-jattana-284122179",
