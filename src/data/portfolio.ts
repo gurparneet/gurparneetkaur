@@ -17,7 +17,7 @@ export const profile = {
 };
 
 export const credibility = [
-  "6+ Years Experience",
+  "8+ Years Experience",
   "256 Projects Platform",
   "C# / .NET",
   "APIs & Integrations",
@@ -37,7 +37,7 @@ export const navItems = [
 ];
 
 export const highlights = [
-  { value: "6+", label: "Years of Enterprise Technology Experience" },
+  { value: "8+", label: "Years of Enterprise Technology Experience" },
   { value: "256", label: "Projects Across Supported Platform (platform scale, not personally completed projects)" },
   { value: "C# / .NET", label: "Core Development Experience" },
   { value: "REST + SOAP", label: "API & Integration Experience" },
