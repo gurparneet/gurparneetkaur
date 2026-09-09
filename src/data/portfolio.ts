@@ -1,4 +1,4 @@
-import portraitAsset from "@/assets/gurparneet-portrait.jpeg.asset.json";
+// Portrait is served from public/ so the static build works on any host (e.g. GitHub Pages).
 
 export const profile = {
   name: "Gurparneet Kaur",
@@ -10,7 +10,7 @@ export const profile = {
     "https://www.linkedin.com/in/gurparneet-kaur-jattana-284122179",
   linkedinLabel: "linkedin.com/in/gurparneet-kaur-jattana-284122179",
   resumeUrl: "/resume/Gurparneet-Kaur-Resume.pdf",
-  photoUrl: portraitAsset.url,
+  photoUrl: "/images/gurparneet-portrait.jpeg",
   status: "Open to New Opportunities",
   headline:
     "Software Developer Building, Supporting & Improving Enterprise Applications",
