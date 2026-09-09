@@ -13,7 +13,15 @@ export default defineConfig({
     server: { entry: "server" },
     // Static output for GitHub Pages: every route is rendered to HTML at build time.
     pages: [{ path: "/" }],
-    prerender: { enabled: true, autoStaticPathsDiscovery: false },
+    prerender: {
+      enabled: true,
+      autoStaticPathsDiscovery: false,
+      crawlLinks: false,
+      // Only the home route is prerendered; static files like the resume PDF
+      // are copied from public/ and must never be crawled.
+      filter: (page: { path: string }) => page.path === "/",
+    },
+
   },
 });
 
