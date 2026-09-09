@@ -36,14 +36,23 @@ jobs:
       - name: Build static site
         run: bun run build
 
-      - name: Disable Jekyll processing
-        run: touch dist/client/.nojekyll
+      # The static output lands in dist/client locally and .output/public on
+      # some builds, so detect whichever exists.
+      - name: Locate static output
+        id: out
+        run: |
+          if [ -d dist/client ]; then DIR=dist/client;
+          elif [ -d .output/public ]; then DIR=.output/public;
+          else echo "No static output found"; ls -la; exit 1; fi
+          touch "$DIR/.nojekyll"
+          echo "dir=$DIR" >> "$GITHUB_OUTPUT"
 
       - uses: actions/configure-pages@v5
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/client
+          path: ${{ steps.out.outputs.dir }}
+
 
   deploy:
     needs: build
