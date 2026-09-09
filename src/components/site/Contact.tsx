@@ -3,19 +3,30 @@ import { Section } from "./Section";
 import { profile } from "@/data/portfolio";
 
 export function Contact() {
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const data = new FormData(e.currentTarget);
-    const subject = encodeURIComponent(`Portfolio enquiry from ${String(data.get("name") ?? "")}`);
-    const body = encodeURIComponent(
-      `${String(data.get("message") ?? "")}\n\nFrom: ${String(data.get("name") ?? "")} (${String(
-        data.get("email") ?? "",
-      )})`,
-    );
-    window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`;
-    setSent(true);
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    setStatus("sending");
+    try {
+      const res = await fetch(`https://formsubmit.co/ajax/${profile.email}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name: String(data.get("name") ?? ""),
+          email: String(data.get("email") ?? ""),
+          message: String(data.get("message") ?? ""),
+          _subject: `Portfolio enquiry from ${String(data.get("name") ?? "")}`,
+        }),
+      });
+      if (!res.ok) throw new Error("send failed");
+      setStatus("sent");
+      form.reset();
+    } catch {
+      setStatus("error");
+    }
   }
 
   const field =
@@ -65,14 +76,16 @@ export function Contact() {
           </div>
           <button
             type="submit"
-            className="mt-6 w-full rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90 sm:w-auto"
+            disabled={status === "sending"}
+            className="mt-6 w-full rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
           >
-            Send Message
+            {status === "sending" ? "Sending…" : "Send Message"}
           </button>
           <p aria-live="polite" className="mt-3 text-xs text-muted-foreground">
-            {sent
-              ? "Your email app should now be open with the message ready to send."
-              : "Messages open in your email app. A secure email service can be connected later."}
+            {status === "sent" && "Thanks! Your message has been sent — I'll get back to you soon."}
+            {status === "error" && "Sorry, the message could not be sent. Please email me directly instead."}
+            {(status === "idle" || status === "sending") &&
+              "Your message is delivered straight to my inbox."}
           </p>
         </form>
 
