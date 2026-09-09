@@ -18,7 +18,7 @@ import { Footer } from "@/components/site/Footer";
 
 const title = "Gurparneet Kaur | Software Developer | Application Support Developer";
 const description =
-  "Gurparneet Kaur is a Software Developer and Application Support professional with 6+ years of enterprise technology experience across C#/.NET, SQL, APIs, CI/CD, production support, QA automation and AI-assisted development.";
+  "Gurparneet Kaur is a Software Developer and Application Support professional with 8+ years of enterprise technology experience across C#/.NET, SQL, APIs, CI/CD, production support, QA automation and AI-assisted development.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
