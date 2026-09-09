@@ -76,14 +76,16 @@ export function Contact() {
           </div>
           <button
             type="submit"
-            className="mt-6 w-full rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90 sm:w-auto"
+            disabled={status === "sending"}
+            className="mt-6 w-full rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
           >
-            Send Message
+            {status === "sending" ? "Sending…" : "Send Message"}
           </button>
           <p aria-live="polite" className="mt-3 text-xs text-muted-foreground">
-            {sent
-              ? "Your email app should now be open with the message ready to send."
-              : "Messages open in your email app. A secure email service can be connected later."}
+            {status === "sent" && "Thanks! Your message has been sent — I'll get back to you soon."}
+            {status === "error" && "Sorry, the message could not be sent. Please email me directly instead."}
+            {(status === "idle" || status === "sending") &&
+              "Your message is delivered straight to my inbox."}
           </p>
         </form>
 
