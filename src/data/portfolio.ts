@@ -1,3 +1,5 @@
+import portraitAsset from "@/assets/gurparneet-portrait.jpeg.asset.json";
+
 export const profile = {
   name: "Gurparneet Kaur",
   title: "Software Developer | Application Support Developer | Technical Problem Solver",
@@ -8,12 +10,12 @@ export const profile = {
     "https://www.linkedin.com/in/gurparneet-kaur-jattana-284122179",
   linkedinLabel: "linkedin.com/in/gurparneet-kaur-jattana-284122179",
   resumeUrl: "/resume/Gurparneet-Kaur-Resume.pdf",
-  photoUrl: "/__l5e/assets-v1/84994ad2-5db5-4c02-a3f1-db40f07056e0/gurparneet.jpg",
+  photoUrl: portraitAsset.url,
   status: "Open to New Opportunities",
   headline:
     "Software Developer Building, Supporting & Improving Enterprise Applications",
   subheadline:
-    "Software Developer and Application Support professional with 6+ years of enterprise technology experience across software development, production support, APIs, databases, CI/CD, testing and AI-assisted development.",
+    "Software Developer and Application Support professional with 8+ years of enterprise technology experience across software development, production support, APIs, databases, CI/CD, testing and AI-assisted development.",
 };
 
 export const credibility = [
@@ -46,7 +48,7 @@ export const highlights = [
 ];
 
 export const aboutIntro =
-  "Gurparneet is a Software Developer and Application Support Developer professional with 6+ years of enterprise technology experience developing, enhancing and supporting business-critical applications.";
+  "Gurparneet is a Software Developer and Application Support Developer professional with 8+ years of enterprise technology experience developing, enhancing and supporting business-critical applications.";
 
 export const aboutPoints: { title: string; items: string[] }[] = [
   {
