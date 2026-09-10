@@ -19,6 +19,8 @@ export function Contact() {
           email: String(data.get("email") ?? ""),
           message: String(data.get("message") ?? ""),
           _subject: `Portfolio enquiry from ${String(data.get("name") ?? "")}`,
+          // FormSubmit honeypot: bots fill this hidden field and are rejected.
+          _honey: String(data.get("_honey") ?? ""),
         }),
       });
       if (!res.ok) throw new Error("send failed");
@@ -41,6 +43,11 @@ export function Contact() {
     >
       <div className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
         <form onSubmit={onSubmit} className="surface-card p-6 sm:p-8">
+          {/* Honeypot — invisible to humans; spam bots fill it and get blocked. */}
+          <div aria-hidden="true" className="absolute -left-[9999px] top-auto h-px w-px overflow-hidden">
+            <label htmlFor="_honey">Leave this field empty</label>
+            <input id="_honey" name="_honey" type="text" tabIndex={-1} autoComplete="off" />
+          </div>
           <div>
             <label htmlFor="name" className="text-sm font-medium">
               Name
