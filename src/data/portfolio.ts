@@ -446,7 +446,7 @@ export const training = [
 ];
 
 export const travelIntro =
-  "Beyond technology and professional growth, I love discovering new places, experiencing different cultures, and creating memories along the way.";
+  "Travelling has always been one of the things I truly enjoy because every place offers more than just beautiful views — it gives you a chance to experience life from a different perspective. From exploring the beautiful cities and landscapes of Canada, walking through the charming streets of Paris and discovering the beauty of Italy and Milan, to experiencing the breathtaking scenery of Switzerland, the energy and diversity of the United States, the warmth of the Dominican Republic and Mexico, and the rich culture, traditions, and colors of India, each journey has given me something new to appreciate. Travelling has taught me to be more open-minded, adaptable, curious, and appreciative of different cultures and ways of life. It has also reminded me to slow down, step outside my comfort zone, meet new people, try new things, and enjoy the moments that become lasting memories. For me, travelling is not just about the places I have visited, but about the experiences, perspectives, stories, and memories I bring back from each journey. I look forward to discovering many more places, embracing new experiences, and continuing to collect memories along the way.";
 
 export const travelClosing =
   "Collecting places, experiences & memories along the way.";
