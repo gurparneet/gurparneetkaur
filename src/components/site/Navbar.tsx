@@ -4,12 +4,32 @@ import { navItems, profile } from "@/data/portfolio";
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [active, setActive] = useState<string>("home");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const sections = navItems
+      .map((item) => document.getElementById(item.id))
+      .filter((el): el is HTMLElement => Boolean(el));
+    if (!sections.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+        if (visible) setActive(visible.target.id);
+      },
+      { rootMargin: "-45% 0px -50% 0px", threshold: 0 },
+    );
+    sections.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -31,7 +51,12 @@ export function Navbar() {
             <a
               key={item.id}
               href={`#${item.id}`}
-              className="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+              aria-current={active === item.id ? "true" : undefined}
+              className={`rounded-md px-3 py-2 text-sm transition-colors hover:bg-secondary hover:text-foreground ${
+                active === item.id
+                  ? "bg-secondary font-semibold text-foreground"
+                  : "text-muted-foreground"
+              }`}
             >
               {item.label}
             </a>
@@ -70,7 +95,12 @@ export function Navbar() {
                 <a
                   href={`#${item.id}`}
                   onClick={() => setOpen(false)}
-                  className="block rounded-md px-3 py-3 text-sm text-muted-foreground hover:bg-secondary hover:text-foreground"
+                  aria-current={active === item.id ? "true" : undefined}
+                  className={`block rounded-md px-3 py-3 text-sm hover:bg-secondary hover:text-foreground ${
+                    active === item.id
+                      ? "bg-secondary font-semibold text-foreground"
+                      : "text-muted-foreground"
+                  }`}
                 >
                   {item.label}
                 </a>

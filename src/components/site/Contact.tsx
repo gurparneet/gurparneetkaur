@@ -120,14 +120,23 @@ export function Contact() {
               <dd className="mt-1">{profile.location}</dd>
             </div>
           </dl>
-          <a
-            href={profile.linkedin}
-            target="_blank"
-            rel="noreferrer noopener"
-            className="mt-7 inline-block rounded-lg border border-border bg-background/50 px-5 py-3 text-sm font-semibold transition-colors hover:bg-secondary"
-          >
-            Connect with me on LinkedIn
-          </a>
+          <div className="mt-7 flex flex-wrap gap-3">
+            <a
+              href={profile.linkedin}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="inline-block rounded-lg border border-border bg-background/50 px-5 py-3 text-sm font-semibold transition-colors hover:bg-secondary"
+            >
+              Connect with me on LinkedIn
+            </a>
+            <a
+              href="/contact/gurparneet-kaur.vcf"
+              download
+              className="inline-block rounded-lg border border-border bg-background/50 px-5 py-3 text-sm font-semibold transition-colors hover:bg-secondary"
+            >
+              Save my contact card
+            </a>
+          </div>
         </div>
       </div>
     </Section>

@@ -336,57 +336,65 @@ export type CaseStudy = {
 export const caseStudies: CaseStudy[] = [
   {
     name: "Enterprise Application Enhancement",
-    problem: "Placeholder — add the specific business need or gap this enhancement addressed.",
+    problem:
+      "Business-critical applications across a platform of 256 projects required ongoing functional enhancements and defect resolution driven by project and client requirements.",
     role: "Software Developer responsible for implementation and delivery.",
     approach:
-      "Placeholder — add the analysis, design and implementation steps taken for this enhancement.",
+      "Analysed requirements and existing code, implemented and maintained application functionality in C# and .NET, supported the change through testing, deployment and post-release support.",
     technology: "C#, .NET, SQL",
-    outcome: "Placeholder — add the specific result once confirmed.",
+    outcome:
+      "Enhancements and defect fixes were delivered into production and supported after release.",
   },
   {
     name: "API Integration & Troubleshooting",
-    problem: "Placeholder — add the integration issue or requirement.",
+    problem:
+      "REST and SOAP integrations needed validation and investigation when requests, responses or authentication behaved unexpectedly.",
     role: "Developer investigating and validating API behaviour.",
     approach:
-      "Placeholder — add how request/response, authentication and integration behaviour were diagnosed.",
+      "Reproduced and inspected calls in Postman and SoapUI, examined request/response payloads, authentication and integration configuration, then diagnosed and resolved the underlying issue.",
     technology: "REST APIs, SOAP APIs, Postman, SoapUI",
-    outcome: "Placeholder — add the specific result once confirmed.",
+    outcome: "Integration issues were diagnosed and integrations validated before release.",
   },
   {
     name: "Production Issue Resolution",
-    problem: "Placeholder — add the production incident context.",
+    problem:
+      "Live application incidents raised through Jira and ServiceNow required investigation and resolution within defined SLAs.",
     role: "Application support owner from investigation to resolution.",
     approach:
-      "Placeholder — add the monitoring, log analysis and root cause steps used.",
+      "Reviewed monitoring tools and application logs, ran SQL analysis against the data, identified root cause and applied or coordinated the fix, keeping ticket documentation up to date.",
     technology: "Monitoring tools, logs, SQL, Jira, ServiceNow",
-    outcome: "Placeholder — add the specific result once confirmed.",
+    outcome: "Incidents were resolved within SLA with root cause documented.",
   },
   {
     name: "CI/CD & Deployment Support",
-    problem: "Placeholder — add the release or deployment challenge.",
+    problem:
+      "Large-scale batch releases needed reliable deployment across environments, with failures investigated quickly.",
     role: "Deployment support across batch releases.",
     approach:
-      "Placeholder — add how deployment failures were investigated and releases validated.",
+      "Supported deployments through CI/CD pipelines, Git and Octopus, investigated deployment failures and validated releases after they were promoted.",
     technology: "Git, CI/CD, Octopus",
-    outcome: "Placeholder — add the specific result once confirmed.",
+    outcome: "Releases were deployed and validated, with deployment failures investigated and addressed.",
   },
   {
     name: "Payment Gateway Integration",
-    problem: "Placeholder — add the payment configuration requirement.",
+    problem:
+      "Projects required payment gateways and payment plugins to be configured and working correctly for release.",
     role: "Developer configuring gateways and payment plugins.",
     approach:
-      "Placeholder — add setup, troubleshooting and release activities performed.",
+      "Configured gateways and plugins for the project, troubleshot payment integration behaviour and supported the related release activities.",
     technology: "Payment gateways, payment plugins, APIs",
-    outcome: "Placeholder — add the specific result once confirmed.",
+    outcome: "Payment configurations were set up, troubleshot and taken through release.",
   },
   {
     name: "Test Automation",
-    problem: "Placeholder — add the coverage or quality need.",
+    problem:
+      "Web, Android and iOS applications needed repeatable automated coverage and pre-release validation.",
     role: "Automation engineer designing and executing test cases.",
     approach:
-      "Placeholder — add framework and test design details across web, Android and iOS.",
+      "Designed, enhanced, debugged and executed automated test cases with Java, Selenium WebDriver, TestNG and Appium, and documented defects in Jira with reproduction steps and screenshots.",
     technology: "Java, Selenium WebDriver, TestNG, Appium",
-    outcome: "Placeholder — add the specific result once confirmed.",
+    outcome:
+      "Automated coverage supported pre-release validation and helped confirm changes were production-ready.",
   },
 ];
 
