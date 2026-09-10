@@ -51,7 +51,12 @@ export function Navbar() {
             <a
               key={item.id}
               href={`#${item.id}`}
-              className="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+              aria-current={active === item.id ? "true" : undefined}
+              className={`rounded-md px-3 py-2 text-sm transition-colors hover:bg-secondary hover:text-foreground ${
+                active === item.id
+                  ? "bg-secondary font-semibold text-foreground"
+                  : "text-muted-foreground"
+              }`}
             >
               {item.label}
             </a>
@@ -90,7 +95,12 @@ export function Navbar() {
                 <a
                   href={`#${item.id}`}
                   onClick={() => setOpen(false)}
-                  className="block rounded-md px-3 py-3 text-sm text-muted-foreground hover:bg-secondary hover:text-foreground"
+                  aria-current={active === item.id ? "true" : undefined}
+                  className={`block rounded-md px-3 py-3 text-sm hover:bg-secondary hover:text-foreground ${
+                    active === item.id
+                      ? "bg-secondary font-semibold text-foreground"
+                      : "text-muted-foreground"
+                  }`}
                 >
                   {item.label}
                 </a>
