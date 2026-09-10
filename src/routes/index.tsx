@@ -16,6 +16,9 @@ import { Resume } from "@/components/site/Resume";
 import { Travel } from "@/components/site/Travel";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
+import { ScrollToTop } from "@/components/site/ScrollToTop";
+
+const ogImage = "https://www.gurparneetkaur.com/images/og-cover.jpg";
 
 const title = "Gurparneet Kaur | Software Developer | Application Support Developer";
 const description =
@@ -31,6 +34,8 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "profile" },
       { property: "og:url", content: "/" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:image", content: ogImage },
+      { name: "twitter:image", content: ogImage },
     ],
     links: [{ rel: "canonical", href: "/" }],
     scripts: [
@@ -98,6 +103,7 @@ function Index() {
         <Contact />
       </main>
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }
