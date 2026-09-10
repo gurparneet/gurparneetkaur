@@ -6,9 +6,8 @@ export const profile = {
   shortTitle: "Software Developer / Application Support Developer",
   location: "Canada",
   email: "gurparneet03@gmail.com",
-  linkedin:
-    "https://www.linkedin.com/in/gurparneet-kaur-jattana-284122179",
-  linkedinLabel: "linkedin.com/in/gurparneet-kaur-jattana-284122179",
+  linkedin: "https://www.linkedin.com/in/gurparneet-kaur/",
+  linkedinLabel: "linkedin.com/in/gurparneet-kaur",
   resumeUrl: "/resume/Gurparneet-Kaur-Resume.pdf",
   photoUrl: "/images/gurparneet-portrait.jpeg",
   status: "Open to New Opportunities",
