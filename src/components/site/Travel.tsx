@@ -35,7 +35,7 @@ export function Travel() {
           </svg>
 
           {/* destination chips */}
-          <ul className="flex flex-wrap items-center justify-center gap-x-4 gap-y-5 sm:gap-x-6">
+          <ul className="flex flex-wrap items-center justify-center gap-x-4 gap-y-5 sm:gap-x-6 sm:pr-32 lg:pr-40">
             {destinations.map((d, i) => (
               <li key={d.place} className={rotations[i % rotations.length]}>
                 <span className="group inline-flex cursor-default items-center gap-2 rounded-full border border-border bg-surface-2 px-4 py-2 text-sm font-medium shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-md">
