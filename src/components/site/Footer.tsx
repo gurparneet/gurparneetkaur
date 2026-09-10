@@ -1,6 +1,20 @@
+import { useState } from "react";
 import { profile } from "@/data/portfolio";
 
 export function Footer() {
+  const [copied, setCopied] = useState(false);
+
+  async function copyEmail() {
+    try {
+      await navigator.clipboard.writeText(profile.email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // Fallback: open mail client
+      window.location.href = `mailto:${profile.email}`;
+    }
+  }
+
   return (
     <footer className="border-t border-border bg-surface/40">
       <div className="mx-auto flex max-w-[76rem] flex-col gap-6 px-5 py-12 sm:flex-row sm:items-end sm:justify-between">
@@ -13,9 +27,13 @@ export function Footer() {
         </div>
         <ul className="space-y-1 text-sm text-muted-foreground">
           <li>
-            <a className="hover:text-primary" href={`mailto:${profile.email}`}>
-              {profile.email}
-            </a>
+            <button
+              type="button"
+              onClick={copyEmail}
+              className="hover:text-primary transition-colors text-left"
+            >
+              {copied ? "Email copied!" : profile.email}
+            </button>
           </li>
           <li>
             <a
