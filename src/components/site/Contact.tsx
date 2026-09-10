@@ -19,6 +19,8 @@ export function Contact() {
           email: String(data.get("email") ?? ""),
           message: String(data.get("message") ?? ""),
           _subject: `Portfolio enquiry from ${String(data.get("name") ?? "")}`,
+          // FormSubmit honeypot: bots fill this hidden field and are rejected.
+          _honey: String(data.get("_honey") ?? ""),
         }),
       });
       if (!res.ok) throw new Error("send failed");
