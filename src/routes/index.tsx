@@ -13,6 +13,7 @@ import { Projects } from "@/components/site/Projects";
 import { Leadership } from "@/components/site/Leadership";
 import { Education } from "@/components/site/Education";
 import { Resume } from "@/components/site/Resume";
+import { Travel } from "@/components/site/Travel";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
 
@@ -93,6 +94,7 @@ function Index() {
         <Leadership />
         <Education />
         <Resume />
+        <Travel />
         <Contact />
       </main>
       <Footer />

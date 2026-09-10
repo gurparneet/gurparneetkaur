@@ -444,3 +444,21 @@ export const training = [
     date: "December 2016",
   },
 ];
+
+export const travelIntro =
+  "Beyond technology and professional growth, I love discovering new places, experiencing different cultures, and creating memories along the way.";
+
+export const travelClosing =
+  "Collecting places, experiences & memories along the way.";
+
+export const destinations = [
+  { place: "Paris", country: "France", note: "Quiet streets, long walks and café mornings." },
+  { place: "Milan", country: "Italy", note: "Design, architecture and unhurried evenings." },
+  { place: "Italy", country: "Europe", note: "Coastlines, old towns and slow afternoons." },
+  { place: "Switzerland", country: "Europe", note: "Mountain air, lakes and scenic train rides." },
+  { place: "United States", country: "North America", note: "City skylines and wide open road trips." },
+  { place: "Dominican Republic", country: "Caribbean", note: "Warm water, sunsets and easy days." },
+  { place: "Mexico", country: "North America", note: "Colour, culture and coastal escapes." },
+  { place: "India", country: "Asia", note: "Home, family and familiar flavours." },
+  { place: "And more", country: "Still exploring", note: "New places waiting on the list." },
+];
