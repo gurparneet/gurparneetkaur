@@ -452,6 +452,7 @@ export const travelClosing =
   "Collecting places, experiences & memories along the way.";
 
 export const destinations = [
+  { place: "Canada", country: "Home", note: "Beautiful cities, lakes and landscapes at home." },
   { place: "Paris", country: "France", note: "Quiet streets, long walks and café mornings." },
   { place: "Milan", country: "Italy", note: "Design, architecture and unhurried evenings." },
   { place: "Italy", country: "Europe", note: "Coastlines, old towns and slow afternoons." },

@@ -1,9 +1,19 @@
 import { Section } from "./Section";
 import { travelIntro, travelClosing, destinations } from "@/data/portfolio";
 
-const rotations = ["-rotate-2", "rotate-1", "-rotate-1", "rotate-2", "rotate-1", "-rotate-2", "rotate-2", "-rotate-1", "rotate-1"];
+const rotations = ["-rotate-2", "rotate-1", "-rotate-1", "rotate-2", "rotate-1", "-rotate-2", "rotate-2", "-rotate-1", "rotate-1", "-rotate-1"];
+
+function DottedLink() {
+  return (
+    <span
+      aria-hidden="true"
+      className="mx-1 inline-block w-5 border-t-2 border-dotted border-primary/40 sm:w-7"
+    />
+  );
+}
 
 export function Travel() {
+  const mid = Math.floor(destinations.length / 2);
   return (
     <Section
       id="travel"
@@ -36,30 +46,29 @@ export function Travel() {
 
       {/* memory board */}
       <div className="relative mx-auto mt-12 max-w-4xl">
-        <div className="relative rounded-3xl border border-dashed border-primary/30 bg-surface px-6 py-10 shadow-sm sm:px-12 sm:py-12">
-          {/* subtle flight path */}
-          <svg
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-x-8 top-4 hidden h-24 w-[calc(100%-4rem)] text-primary/25 sm:block"
-            viewBox="0 0 800 96"
-            fill="none"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M10 70 C 180 10, 340 90, 520 40 S 720 20, 790 55"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeDasharray="5 7"
-              strokeLinecap="round"
-            />
-            <path d="M786 47l14 8-14 6 3-7-3-7Z" fill="currentColor" />
-          </svg>
-
-          {/* destination chips */}
-          <ul className="flex flex-wrap items-center justify-center gap-x-4 gap-y-5 sm:gap-x-6">
+        <div className="relative rounded-3xl border border-dashed border-primary/30 bg-surface px-6 py-10 shadow-sm sm:px-10 sm:py-12">
+          {/* destination chips joined by a dotted route with a plane midway */}
+          <ul className="flex flex-wrap items-center justify-center gap-y-5">
             {destinations.map((d, i) => (
-              <li key={d.place} className={rotations[i % rotations.length]}>
-                <span className="group inline-flex cursor-default items-center gap-2 rounded-full border border-border bg-surface-2 px-4 py-2 text-sm font-medium shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-md">
+              <li key={d.place} className="flex items-center">
+                {i > 0 ? <DottedLink /> : null}
+                {i === mid ? (
+                  <>
+                    <span
+                      aria-hidden="true"
+                      title="Next stop"
+                      className="flex h-8 w-8 items-center justify-center rounded-full border border-primary/30 bg-surface text-primary shadow-sm"
+                    >
+                      <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
+                        <path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V18l-2 1.5V21l3.5-1 3.5 1v-1.5L13 18v-4.5L21 16Z" />
+                      </svg>
+                    </span>
+                    <DottedLink />
+                  </>
+                ) : null}
+                <span
+                  className={`group inline-flex cursor-default items-center gap-2 rounded-full border border-border bg-surface-2 px-4 py-2 text-sm font-medium shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-md ${rotations[i % rotations.length]}`}
+                >
                   <svg
                     aria-hidden="true"
                     viewBox="0 0 24 24"
