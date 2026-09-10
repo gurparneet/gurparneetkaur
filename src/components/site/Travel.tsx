@@ -1,6 +1,5 @@
 import { Section } from "./Section";
 import { travelIntro, travelClosing, destinations } from "@/data/portfolio";
-import cutout from "@/assets/gurparneet-travel-cutout.png.asset.json";
 
 const rotations = ["-rotate-2", "rotate-1", "-rotate-1", "rotate-2", "rotate-1", "-rotate-2", "rotate-2", "-rotate-1", "rotate-1"];
 
@@ -10,12 +9,34 @@ export function Travel() {
       id="travel"
       eyebrow="Beyond the Keyboard"
       title="About Me Beyond Work"
-      intro={travelIntro}
       className="border-y border-border bg-surface/40"
     >
-      <div className="relative mx-auto max-w-4xl">
-        {/* memory board */}
-        <div className="relative rounded-3xl border border-dashed border-primary/30 bg-surface px-6 py-10 shadow-sm sm:px-12 sm:py-14">
+      <div className="grid items-start gap-10 lg:grid-cols-[1fr_auto] lg:gap-14">
+        {/* personal paragraph */}
+        <p className="max-w-3xl text-base leading-relaxed text-muted-foreground">
+          {travelIntro}
+        </p>
+
+        {/* original photo, tilted like a scrapbook polaroid */}
+        <figure className="mx-auto w-max rotate-2 rounded-2xl border border-border bg-surface p-2.5 pb-3 shadow-lg transition-transform duration-300 hover:rotate-0 lg:sticky lg:top-24">
+          <img
+            src="/images/gurparneet-travel.jpg"
+            alt="Gurparneet Kaur on one of her trips"
+            loading="lazy"
+            className="h-44 w-44 rounded-xl object-cover object-top sm:h-52 sm:w-52"
+          />
+          <figcaption className="mt-2 flex items-center justify-center gap-1.5 text-[11px] text-muted-foreground">
+            <svg aria-hidden="true" viewBox="0 0 24 24" className="h-3 w-3 text-primary" fill="currentColor">
+              <path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V18l-2 1.5V21l3.5-1 3.5 1v-1.5L13 18v-4.5L21 16Z" />
+            </svg>
+            somewhere new
+          </figcaption>
+        </figure>
+      </div>
+
+      {/* memory board */}
+      <div className="relative mx-auto mt-12 max-w-4xl">
+        <div className="relative rounded-3xl border border-dashed border-primary/30 bg-surface px-6 py-10 shadow-sm sm:px-12 sm:py-12">
           {/* subtle flight path */}
           <svg
             aria-hidden="true"
@@ -35,7 +56,7 @@ export function Travel() {
           </svg>
 
           {/* destination chips */}
-          <ul className="flex flex-wrap items-center justify-center gap-x-4 gap-y-5 sm:gap-x-6 sm:pr-32 lg:pr-40">
+          <ul className="flex flex-wrap items-center justify-center gap-x-4 gap-y-5 sm:gap-x-6">
             {destinations.map((d, i) => (
               <li key={d.place} className={rotations[i % rotations.length]}>
                 <span className="group inline-flex cursor-default items-center gap-2 rounded-full border border-border bg-surface-2 px-4 py-2 text-sm font-medium shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-md">
@@ -54,22 +75,6 @@ export function Travel() {
             ))}
           </ul>
         </div>
-
-        {/* playful cutout photo, tilted like a polaroid */}
-        <figure className="pointer-events-none mx-auto -mt-8 w-max rotate-3 rounded-2xl border border-border bg-surface p-2.5 pb-3 shadow-lg transition-transform duration-300 hover:rotate-1 sm:absolute sm:-right-6 sm:-top-10 sm:mt-0 sm:rotate-6">
-          <img
-            src={cutout.url}
-            alt="Gurparneet Kaur enjoying a trip"
-            loading="lazy"
-            className="h-28 w-28 rounded-xl bg-surface-2 object-cover object-top sm:h-32 sm:w-32"
-          />
-          <figcaption className="mt-2 flex items-center justify-center gap-1.5 text-[11px] text-muted-foreground">
-            <svg aria-hidden="true" viewBox="0 0 24 24" className="h-3 w-3 text-primary" fill="currentColor">
-              <path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V18l-2 1.5V21l3.5-1 3.5 1v-1.5L13 18v-4.5L21 16Z" />
-            </svg>
-            somewhere new
-          </figcaption>
-        </figure>
       </div>
 
       <p className="mt-12 text-center font-display text-base italic text-muted-foreground">
