@@ -15,11 +15,11 @@ export function Travel() {
           src="/images/gurparneet-travel-cutout.png"
           alt="Gurparneet Kaur"
           loading="lazy"
-          className="absolute -top-16 right-2 w-20 rotate-6 drop-shadow-lg transition-transform duration-300 hover:rotate-2 sm:-top-24 sm:right-6 sm:w-28 md:w-36 lg:-right-10 lg:top-auto lg:bottom-[-7rem] lg:w-44 lg:rotate-3"
+          className="absolute -top-16 right-2 w-20 rotate-6 drop-shadow-lg transition-transform duration-300 hover:rotate-2 sm:-top-24 sm:right-6 sm:w-28 md:w-32 lg:-top-20 lg:right-0 lg:h-[calc(100%+9rem)] lg:w-auto"
         />
 
         {/* personal quote */}
-        <figure className="relative rounded-3xl border border-border bg-surface px-7 py-10 shadow-sm sm:px-12 sm:py-14 lg:pr-44">
+        <figure className="relative rounded-3xl border border-border bg-surface px-7 py-10 shadow-sm sm:px-12 sm:py-14 lg:pr-48">
           <span
             aria-hidden="true"
             className="absolute left-5 top-3 select-none font-hand text-6xl text-primary/30 sm:left-8 sm:text-7xl"
