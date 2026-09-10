@@ -18,7 +18,7 @@ export function Travel() {
     <Section
       id="travel"
       eyebrow="Beyond the Keyboard"
-      title="About Me Beyond Work"
+      title="About Me"
       className="border-y border-border bg-surface/40"
     >
       <div className="grid items-start gap-10 lg:grid-cols-[1fr_auto] lg:gap-14">
