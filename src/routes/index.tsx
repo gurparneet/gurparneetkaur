@@ -49,7 +49,7 @@ export const Route = createFileRoute("/")({
             addressCountry: "CA",
           },
           sameAs: [
-            "https://www.linkedin.com/in/gurparneet-kaur-jattana-284122179",
+            "https://www.linkedin.com/in/gurparneet-kaur/",
           ],
           knowsAbout: [
             "C#",
