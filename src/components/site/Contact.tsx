@@ -104,9 +104,19 @@ export function Contact() {
             <div>
               <dt className="text-muted-foreground">Email</dt>
               <dd className="mt-1">
-                <a className="hover:text-primary" href={`mailto:${profile.email}`}>
+                <button
+                  type="button"
+                  onClick={async () => {
+                    try {
+                      await navigator.clipboard.writeText(profile.email);
+                    } catch {
+                      window.location.href = `mailto:${profile.email}`;
+                    }
+                  }}
+                  className="hover:text-primary transition-colors text-left"
+                >
                   {profile.email}
-                </a>
+                </button>
               </dd>
             </div>
             <div>
